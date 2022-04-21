@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { DatabseModule } from './databse/databse.module';
+import { DatabseModule } from './database/databse.module';
 import { HttpModule } from './http/http.module';
 
 

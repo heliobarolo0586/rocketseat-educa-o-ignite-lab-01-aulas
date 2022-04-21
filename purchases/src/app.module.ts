@@ -1,11 +1,9 @@
 import { Module } from '@nestjs/common';
-import { DatabseModule } from './databse/databse.module';
+import { DatabaseModule } from './database/database.module';
 import { HttpModule } from './http/http.module';
 
-
-
 @Module({
-  imports: [DatabseModule, HttpModule],
+  imports: [DatabaseModule, HttpModule],
   controllers: [],
   providers: [],
 })
