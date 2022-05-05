@@ -2,13 +2,12 @@ import { UseGuards } from '@nestjs/common';
 import { Args, Mutation, Parent, Query, ResolveField, Resolver } from '@nestjs/graphql';
 import { CustomersService } from '../../../services/customers.service';
 import { ProductsService } from '../../../services/products.service';
-
 import { PurchasesService } from '../../../services/purchases.service';
 import { AuthorizationGuard } from '../../auth/authorization.guard';
 import { AuthUser, CurrentUser } from '../../auth/current-user';
 import { CreatePurchaseinput } from '../inputs/create-purchase-input';
-import { Product } from '../models/product';
 import { Purchase } from '../models/purchases';
+
 
 @Resolver(() => Purchase)
 export class PurchasesResolver {
@@ -19,7 +18,7 @@ export class PurchasesResolver {
   ) { }
 
   @Query(() => [Purchase])
-  @UseGuards(AuthorizationGuard)
+  // const@UseGuards(AuthorizationGuard)
   purchases() {
     return this.purchasesService.listAllPurchases();
   }
